@@ -5,7 +5,7 @@ def binary_classification_metrics(prediction, ground_truth):
     f1 = 0
 
     # TODO: implement metrics!
-    
+
     return accuracy, precision, recall, f1
 
 

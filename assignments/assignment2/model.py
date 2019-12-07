@@ -34,10 +34,10 @@ class TwoLayerNet:
         # TODO Set parameter gradient to zeros
         # Hint: using self.params() might be useful!
         raise Exception("Not implemented!")
-        
+
         # TODO Compute loss and fill param gradients
         # by running forward and backward passes through the model
-        
+
         # After that, implement l2 regularization on all params
         # Hint: self.params() is useful again!
         raise Exception("Not implemented!")

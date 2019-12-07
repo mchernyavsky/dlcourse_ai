@@ -2,7 +2,7 @@ import numpy as np
 
 
 def l2_regularization(W, reg_strength):
-    '''
+    """
     Computes L2 regularization loss on weights and its gradient
 
     Arguments:
@@ -12,7 +12,7 @@ def l2_regularization(W, reg_strength):
     Returns:
       loss, single value - l2 regularization loss
       gradient, np.array same shape as W - gradient of weight by l2 loss
-    '''
+    """
     # TODO: Copy from previous assignment
     raise Exception("Not implemented!")
 
@@ -20,7 +20,7 @@ def l2_regularization(W, reg_strength):
 
 
 def softmax_with_cross_entropy(predictions, target_index):
-    '''
+    """
     Computes softmax and cross-entropy loss for model predictions,
     including the gradient
 
@@ -33,22 +33,23 @@ def softmax_with_cross_entropy(predictions, target_index):
     Returns:
       loss, single value - cross-entropy loss
       dprediction, np array same shape as predictions - gradient of predictions by loss value
-    '''
+    """
     # TODO copy from the previous assignment
     raise Exception("Not implemented!")
     return loss, dprediction
 
 
 class Param:
-    '''
+    """
     Trainable parameter of the model
     Captures both parameter value and the gradient
-    '''
+    """
+
     def __init__(self, value):
         self.value = value
         self.grad = np.zeros_like(value)
 
-        
+
 class ReLULayer:
     def __init__(self):
         pass
@@ -78,26 +79,26 @@ class FullyConnectedLayer:
 
     def backward(self, d_out):
         # TODO copy from the previous assignment
-        
-        raise Exception("Not implemented!")        
+
+        raise Exception("Not implemented!")
         return d_input
 
     def params(self):
-        return { 'W': self.W, 'B': self.B }
+        return {'W': self.W, 'B': self.B}
 
-    
+
 class ConvolutionalLayer:
     def __init__(self, in_channels, out_channels,
                  filter_size, padding):
-        '''
+        """
         Initializes the layer
-        
+
         Arguments:
         in_channels, int - number of input channels
         out_channels, int - number of output channels
         filter_size, int - size of the conv filter
         padding, int - number of 'pixels' to pad on each side
-        '''
+        """
 
         self.filter_size = filter_size
         self.in_channels = in_channels
@@ -111,17 +112,16 @@ class ConvolutionalLayer:
 
         self.padding = padding
 
-
     def forward(self, X):
         batch_size, height, width, channels = X.shape
 
         out_height = 0
         out_width = 0
-        
+
         # TODO: Implement forward pass
         # Hint: setup variables that hold the result
         # and one x/y location at a time in the loop below
-        
+
         # It's ok to use loops for going over width and height
         # but try to avoid having any other loops
         for y in range(out_height):
@@ -129,7 +129,6 @@ class ConvolutionalLayer:
                 # TODO: Implement forward pass for specific location
                 pass
         raise Exception("Not implemented!")
-
 
     def backward(self, d_out):
         # Hint: Forward pass was reduced to matrix multiply
@@ -156,18 +155,18 @@ class ConvolutionalLayer:
         raise Exception("Not implemented!")
 
     def params(self):
-        return { 'W': self.W, 'B': self.B }
+        return {'W': self.W, 'B': self.B}
 
 
 class MaxPoolingLayer:
     def __init__(self, pool_size, stride):
-        '''
+        """
         Initializes the max pool
 
         Arguments:
         pool_size, int - area to pool
         stride, int - step size between pooling windows
-        '''
+        """
         self.pool_size = pool_size
         self.stride = stride
         self.X = None

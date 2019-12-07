@@ -4,7 +4,7 @@ from layers import (
     FullyConnectedLayer, ReLULayer,
     ConvolutionalLayer, MaxPoolingLayer, Flattener,
     softmax_with_cross_entropy, l2_regularization
-    )
+)
 
 
 class ConvNet:
@@ -15,6 +15,7 @@ class ConvNet:
     Conv[3x3] -> Relu -> MaxPool[4x4] ->
     Flatten -> FC -> Softmax
     """
+
     def __init__(self, input_shape, n_output_classes, conv1_channels, conv2_channels):
         """
         Initializes the neural network

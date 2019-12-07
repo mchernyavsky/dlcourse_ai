@@ -12,12 +12,12 @@ def load_data_mat(filename, max_samples, seed=42):
     y = y.flatten()
     # Fix up class 0 to be 0
     y[y == 10] = 0
-    
+
     np.random.seed(seed)
     samples = np.random.choice(np.arange(X.shape[0]),
                                max_samples,
                                replace=False)
-    
+
     return X[samples].astype(np.float32), y[samples]
 
 
